@@ -3,23 +3,32 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
-  {{> info}}
+<div class="container">
+  {{>profile}}  
+</div>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-</template>
-
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
-  </ul>
+<template name="profile">
+  <div class="row justify-content-around">
+    <div class="col-7">
+      <img class="" src="logo2.jpg" alt="">
+    </div>
+  </div>
+  <div class="row justify-content-around">
+    <div class="col-sm-2">
+      <h1 class="display-4">4KT</h1>
+    </div>
+  </div>
+  <div class="row justify-content-around">
+    <div class="col-sm-4">
+      <div class="row justify-content-around">
+        <div class="col-sm-4">
+          <button class= "btn btn-primary js-like">Like</button>
+        </div>
+        <div class="col-sm-4">
+          <button class="btn btn-warning js-dislike">Dislike</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
