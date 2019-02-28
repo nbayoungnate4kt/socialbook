@@ -6,3 +6,11 @@ body {
 .pic{
 	width: 100%;
 }
+
+.space{
+	margin-left: 1em;
+}
+
+#modalimg {
+	width: 50%;
+}

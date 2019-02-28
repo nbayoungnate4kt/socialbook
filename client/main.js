@@ -18,7 +18,7 @@ Template.profile.events({
     	numlikes = 0;
     }
     numlikes = numlikes + 1;
-    console.log("YoU Got",numlikes);
+    console.log("YoU GoT",numlikes);
     userDB.update({_id:profID},{$set:{'like':numlikes}});
   },
   'click .js-dislike'(event, instance) {
@@ -28,7 +28,7 @@ Template.profile.events({
     	numdislikes = 0;
     }
     numdislikes = numdislikes + 1;
-    console.log("YoU Got",numdislikes);
+    console.log("YoU GoT",numdislikes);
     userDB.update({_id:profID},{$set:{'dislike':numdislikes}});
   },
   'click .js-delete'(event, instance){
@@ -36,6 +36,17 @@ Template.profile.events({
   	$("#" + profID).fadeOut("slow", "swing", function () {
   	userDB.remove({_id: profID});
   });
+  },
+  'click .js-edituser'(event, instance){
+  	$("#edited").modal('show');
+  	userID = this._id;
+	$('#usrID').val(userID);
+  	$("#modalimg").attr('src', userDB.findOne({_id:userID}).img);
+  	$("#First").html(userDB.findOne({_id:userID}).firstName);
+  	$("#Last").html(userDB.findOne({_id:userID}).lastName);
+  	$("#like").html(userDB.findOne({_id:userID}).like);
+  	$("#dislike").html(userDB.findOne({_id:userID}).dislike);
+  	console.log("open modal");
   }
 });
 
