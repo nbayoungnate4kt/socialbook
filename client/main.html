@@ -42,7 +42,7 @@
           <h1 class="display-4">{{like}}</h1>
         </div>
         <div class="space col-sm-4">
-          <button class="btn btn-warning js-dislike">Dislike</button>
+          <button class="btn btn-danger js-dislike">Dislike</button>
           <h1 class="display-4">{{dislike}}</h1>
         </div>
       </div>
@@ -53,7 +53,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">PROFILE</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -67,15 +67,15 @@
         <h1 class="">Name:</h1><span id="First">{{firstName}}</span> <span id="Last">{{lastName}}</span>       
       </div>
       <div class="col-4 text-centert">
-        <h1 class="">Like:</h1><span id="like">{{like}}</span>
+        <h1 class="">Likes:</h1><span id="like">{{like}}</span>
       </div>
       <div class="col-4 text-centert">
-        <h1 class="">Dislike:</h1><span id="dislike">{{dislike}}</span>
+        <h1 class="">Dislikes:</h1><span id="dislike">{{dislike}}</span>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary js-edit">Edit</button>
-        <button type="button" class="js-delete btn btn-primary">Delete</button> 
+        <button type="button" class="btn btn-sm btn-outline-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#exampleModal"><i class="zmdi zmdi-edit"></i>Edit</button>
+        <button type="button" class="btn btn-sm btn-outline-danger js-delete">Delete</button>
       </div>
     </div>
   </div>
@@ -119,11 +119,17 @@
               </div>
               <input type="text" name="photoName" class="form-control" placeholder="....." aria-label="profile image" aria-describedby="basic-addon1">
             </div>
+                <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">SECONDARY IMAGE</span>
+              </div>
+              <input type="text" name="secphotoName" class="form-control" placeholder="....." aria-label="profile image" aria-describedby="basic-addon1">
+            </div>
       </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary js-saveProfile ">Save changes</button>
+        <button type="button" class="btn btn-primary js-saveProfile ">Save</button>
       </div>
     </div>
   </div>
