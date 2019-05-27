@@ -48,8 +48,15 @@ Template.profile.events({
   	$("#like").html(userDB.findOne({_id:userID}).like);
   	$("#dislike").html(userDB.findOne({_id:userID}).dislike);
   	console.log("open modal");
-  }
+  },
+
+  'click .js-edit'(event, instance){
+    $('#editModal').modal('show');
+    $('#edited').modal('hide');
+    console.log('open edit');
+  },
 });
+
 
 Template.addProfile.events({
 	'click .js-saveProfile'(event, instance){
@@ -74,3 +81,28 @@ Template.addProfile.events({
   		'lastName':lName, 'img':pName , 'imgsec':spName});
   },
 });
+
+Template.editProfile.events({
+  'click .js-saveEdit'(event, instance){
+  var fName = $("#exampleModal input[name='firstName']").val();
+  var lName = $("#exampleModal input[name='lastName']").val();
+  var pName = $("#exampleModal input[name='photoName']").val();
+  var spName = $("#exampleModal input[name='secphotoName']").val();
+  if (pName == ""){
+    pName="logo2.jpg";
+  }
+  console.log("The First Name is",fName)
+  console.log("The Last Name is",lName)
+  console.log("The Photo Name is",pName)
+  //rest the form
+  $("#exampleModal input[name='firstName']").val('');
+  $("#exampleModal input[name='lastName']").val('');
+  $("#exampleModal input[name='photoName']").val('');
+  $("#exampleModal input[name='secphotoName']").val('');
+  //close the modal
+    $("#editModal").modal("hide");
+    userDB.insert({'firstName':fName,
+      'lastName':lName, 'img':pName , 'imgsec':spName});
+  },
+});
+

@@ -4,6 +4,7 @@
 
 <body>
 <div class="container">
+  {{> editProfile}}
   <div class="container">
     <div class="row justify-content-around">
       <div class="col-sm-8 text-center">
@@ -74,7 +75,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-sm btn-outline-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#exampleModal"><i class="zmdi zmdi-edit"></i>Edit</button>
+        <button type="button" class="btn btn-sm btn-outline-secondary js-edit"><i class="zmdi zmdi-edit"></i>Edit</button>
         <button type="button" class="btn btn-sm btn-outline-danger js-delete">Delete</button>
       </div>
     </div>
@@ -137,3 +138,52 @@
 </template>
 
 
+<template name = "editProfile">
+  <!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editing User</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <form>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                 <span class="input-group-text" id="basic-addon1">FIRST NAME</span>
+                </div>
+                  <input type="text" name="firstName" class="form-control" placeholder="....." aria-label="first name" aria-describedby="basic-addon1">
+              </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">LAST NAME</span>
+              </div>
+              <input type="text" name="lastName" class="form-control" placeholder="....." aria-label="last name" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">PROFILE IMAGE</span>
+              </div>
+              <input type="text" name="photoName" class="form-control" placeholder="....." aria-label="profile image" aria-describedby="basic-addon1">
+            </div>
+                <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">SECONDARY IMAGE</span>
+              </div>
+              <input type="text" name="secphotoName" class="form-control" placeholder="....." aria-label="profile image" aria-describedby="basic-addon1">
+            </div>
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary js-saveEdit ">Save</button>
+      </div>      
+    </div>
+  </div>
+</div>
+</template>
